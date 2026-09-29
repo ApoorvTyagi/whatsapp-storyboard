@@ -1,6 +1,6 @@
 # WhatsApp Storyboard
 
-A private, local-first dashboard I built to keep track of how I talk with my friends over WhatsApp — messages, calls, timing patterns, and the little stats that are otherwise easy to forget.
+A private, local-first dashboard I built to keep track of how I talk with my friends over WhatsApp : messages, calls, timing patterns, and the little stats that are otherwise easy to forget.
 
 The goal is simple: take the data WhatsApp already lets me export, turn it into something visual, and look back at the history of conversations and calls day by day.
 
@@ -40,7 +40,7 @@ This is intentionally a local-first project.
 
 ## Export your WhatsApp chat
 
-WhatsApp provides a built-in **Export chat** option. The official WhatsApp Help Center documents exporting a chat with or without media. urlWhatsApp Help Center — How to export your chat historyhttps://faq.whatsapp.com/1180414079177245/
+WhatsApp provides a built-in **Export chat** option. The official WhatsApp Help Center documents exporting a chat with or without media. WhatsApp Help Center : How to export your chat history https://faq.whatsapp.com/1180414079177245/
 
 ### Android
 
@@ -61,7 +61,7 @@ For this dashboard, the important input is the exported **chat text file**. You 
 
 ## Getting WhatsApp call data
 
-WhatsApp does **not provide a normal “Export call history” feature**. Its Help Center says that call history can be viewed in the Calls tab, but it cannot be emailed or exported directly. urlWhatsApp Help Center — About call history on WhatsApphttps://faq.whatsapp.com/743219147158705/
+WhatsApp does **not provide a normal “Export call history” feature**. Its Help Center says that call history can be viewed in the Calls tab, but it cannot be emailed or exported directly. WhatsApp Help Center : About call history on WhatsApp https://faq.whatsapp.com/743219147158705/
 
 This project therefore uses a separate CSV for call analytics.
 
@@ -125,14 +125,14 @@ Then open `http://localhost:8000`.
 
 ## Use your own data
 
-### Option 1 — choose files in the browser
+### Option 1 : choose files in the browser
 
 - Open the dashboard.
 - Select the exported WhatsApp `.txt` file.
 - Select `whatsapp_calls.csv`.
 - Click **Build our story**.
 
-### Option 2 — keep files in `data/`
+### Option 2 : keep files in `data/`
 
 Put the files here:
 
@@ -144,24 +144,6 @@ data/whatsapp_calls.csv
 Then use **Load files from `data/`**.
 
 Replace the example files with your own exports when using the dashboard for personal data.
-
-## Internet access with Cloudflare Tunnel
-
-For a personal deployment, the dashboard can also be served through Cloudflare Tunnel while the Python server continues to listen locally on port `8000`.
-
-Start the local server first:
-
-```bash
-python -m http.server 8000
-```
-
-Then create a Cloudflare Tunnel route to:
-
-```text
-http://localhost:8000
-```
-
-Do not add a path such as `/shar...` to the origin URL unless the local application itself serves that path. Cloudflare should forward the requested URL path unchanged.
 
 ## Project structure
 
@@ -182,16 +164,6 @@ whatsapp-dashboard-main/
     ├── chat.txt
     └── whatsapp_calls.csv
 ```
-
-## Tech
-
-The project is intentionally lightweight:
-
-- HTML/CSS/JavaScript
-- No build step
-- No backend application
-- Python's built-in HTTP server for local serving
-- Canvas and DOM-based visualizations
 
 ## Personal use
 
